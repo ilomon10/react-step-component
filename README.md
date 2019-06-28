@@ -15,12 +15,24 @@ npm install --save react-step-component
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-step-component'
+import { List, Item, ItemLeft, ItemRight, ItemCenter } from 'react-step-component'
 
-class Example extends Component {
-  render () {
+export default class App extends Component {
+  render() {
     return (
-      <MyComponent />
+      <div>
+        <List>
+          <Item>
+            <ItemLeft>
+              Left Component
+            </ItemLeft>
+            <ItemCenter/>
+            <ItemRight>
+              Right Component
+            </ItemRight>
+          </Item>
+        </List>
+      </div>
     )
   }
 }
