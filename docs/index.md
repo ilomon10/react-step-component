@@ -15,28 +15,71 @@ npm install --save react-step-component
 ```jsx
 import React, { Component } from 'react'
 
-import { List, Item, ItemLeft, ItemRight, ItemCenter } from 'react-step-component'
+import { List, Item } from 'react-step-component'
 
 export default class App extends Component {
   render() {
     return (
       <div>
         <List>
-          <Item>
-            <ItemLeft>
+          <Item.Wrapper>
+            <Item.Left>
               Left Component
-            </ItemLeft>
-            <ItemCenter/>
-            <ItemRight>
+            </Item.Left>
+            <Item.Center/>
+            <Item.Right>
               Right Component
-            </ItemRight>
-          </Item>
+            </Item.Right>
+          </Item.Wrapper>
         </List>
       </div>
     )
   }
 }
 ```
+
+## Props API
+
+```jsx
+import { List } from 'react-step-component'
+```
+
+Props | Type | Default
+------|------|------
+children | **node** | 
+
+___
+
+```jsx
+import { Item } from 'react-step-component'
+```
+
+### Item.Wrapper
+
+Props | Type | Default
+------|------|------
+children | **node** | 
+end | **boolean** | false
+state | enum: '**pending**' \| '**waiting**' \| '**done**'
+
+### Item.Left
+
+Props | Type | Default
+------|------|------
+children | **node** |
+
+### Item.Right
+
+Props | Type | Default
+------|------|------
+children | **node** |
+
+### Item.Center
+
+Props | Type | Default
+------|------|------
+content | **node** |
+size | enum: '**lg**' \| '**sm**' | 'lg'
 
 ## License
 
