@@ -1,5 +1,3 @@
-import Step from 'react-step-component'
-
 # react-step-component
 
 > React Step Component
