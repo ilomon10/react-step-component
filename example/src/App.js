@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import {List, Item, ItemLeft, ItemRight, ItemCenter} from 'react-step-component'
+import Step from 'react-step-component'
+
+import Basic from './Basic'
 
 export default class App extends Component {
   state = {
@@ -66,22 +68,25 @@ export default class App extends Component {
     ]
   }
   render() {
-    const items = this.state.data.map(({itemRight, itemCenter, itemLeft}, i) => (
-      <Item key={i} end={i >= this.state.data.length - 1}>
-        <ItemLeft>
+    const items = this.state.data.map(({ itemRight, itemCenter, itemLeft }, i) => (
+      <Step.Item.Wrapper key={i} end={i >= this.state.data.length - 1}>
+        <Step.Item.Left>
           {itemRight}
-        </ItemLeft>
-        <ItemCenter size={itemCenter ? itemCenter.size : undefined }/>
-        <ItemRight>
+        </Step.Item.Left>
+        <Step.Item.Center size={itemCenter ? itemCenter.size : undefined} />
+        <Step.Item.Right>
           {itemLeft}
-        </ItemRight>
-      </Item>
+        </Step.Item.Right>
+      </Step.Item.Wrapper>
     ))
     return (
-      <div>
-        <List>
-          {items}
-        </List>
+      <div style={{ width: 750, margin: '0 auto', display: 'flex', border: '1px solid orange' }}>
+        <Basic />
+        <div>
+          <Step.List>
+            {items}
+          </Step.List>
+        </div>
       </div>
     )
   }

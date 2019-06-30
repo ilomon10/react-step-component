@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './item.css';
+import styles from './css/item.css';
 
 const ItemLeft = ({ children }) => (
   <div className={styles["item-left"]}>

@@ -1,16 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import styles from './item.css';
+import Left from './itemLeft'
+import Right from './itemRight'
+import Center from './itemCenter'
 
-const Item = ({ children, end }) => (
-  <div className={`${styles.item} ${ end ? styles["item-end"] : ''}`}>
+import styles from './css/item.css';
+
+export { default as Left } from './itemLeft'
+export { default as Right } from './itemRight'
+export { default as Center } from './itemCenter'
+
+export const Wrapper = ({ children, end, state }) => (
+  <div className={`${styles.item} ${end ? styles["item--end"] : ''} ${['pending', 'waiting', 'done'].indexOf(state) != -1 ? styles[`item--${state}`] : ''}`}>
     {children}
   </div>
 )
 
-Item.propTypes = {
-  end: PropTypes.bool
+Wrapper.defaultProps = {
+  state: '',
+  end: false,
 }
 
-export default Item;
+Wrapper.propTypes = {
+  end: PropTypes.bool,
+  state: PropTypes.oneOf([
+    'pending',
+    'waiting',
+    'done',
+  ])
+}
+
+export default {
+  Wrapper,
+  Left,
+  Right,
+  Center
+};

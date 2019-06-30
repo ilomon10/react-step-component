@@ -1,0 +1,79 @@
+.item {
+  position: relative;
+  display: flex;
+  padding-bottom: 50px;
+}
+.item > [class*=item-]:not(.item-center) {
+  width: 45%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: grey;
+}
+.item.item--end::before {
+  display: none;
+}
+.item.item--pending::before {
+  background-color: yellow;
+}
+.item.item--pending > .item-center > .item-center-icon {
+  border-color: yellow;
+}
+.item.item--waiting::before {
+  background-color: blue;
+}
+.item.item--waiting > .item-center > .item-center-icon {
+  border-color: blue;
+}
+.item.item--done::before {
+  background-color: green;
+}
+.item.item--done > .item-center > .item-center-icon {
+  border-color: green;
+}
+.item > .item-left {
+  text-align: right;
+}
+.item > .item-left > div {
+  margin-left: auto;
+}
+.item > .item-center {
+  display: block;
+  width: 24px;
+  margin: 0 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.item > .item-center > .item-center-icon {
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: gray;
+  border-style: solid;
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item > .item-center > .item-center-icon.item-center-icon-sm {
+  height: 12px;
+  width: 12px;
+}
+.item > .item-right > div {
+  margin-right: auto;
+}
+
+/*# sourceMappingURL=item.css.map */
