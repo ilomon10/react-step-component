@@ -1,5 +1,6 @@
 .list {
-  position: relative;
-}
+  position: relative; }
+  .list * {
+    box-sizing: border-box; }
 
 /*# sourceMappingURL=list.css.map */

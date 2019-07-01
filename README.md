@@ -40,6 +40,8 @@ export default class App extends Component {
 
 ## Props API
 
+### List
+
 ```jsx
 import { List } from 'react-step-component'
 ```
@@ -49,6 +51,8 @@ Props | Type | Default
 children | **node** | 
 
 ___
+
+### Item
 
 ```jsx
 import { Item } from 'react-step-component'

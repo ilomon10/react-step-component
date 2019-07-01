@@ -1,7 +1,8 @@
 .item {
   position: relative;
   display: flex;
-  padding-bottom: 50px;
+  padding-bottom: 50pt;
+  color: #7f8c8d;
 
   & > [class*="item-"]:not(.item-center){
     width: 45%;
@@ -17,35 +18,47 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 2px;
-    background-color: grey;
+    width: 2pt;
+    background-color: #95a5a6;
   }
 
   &.item--end::before {
     display: none;
   }
-  &.item--pending { 
+  &.item--pending {
+    $color: #f39c12;
+    $color-dark: #d35400;
+
+    color: $color-dark;
     &::before {
-      background-color: yellow;
+      background-color: $color;
     }
     > .item-center > .item-center-icon {
-      border-color: yellow;
+      border-color: $color;
     }
   }
   &.item--waiting {
+    $color: #3498db;
+    $color-dark: #2980b9;
+
+    color: #2980b9;
     &::before {
-      background-color: blue;
+      background-color: $color;
     }
     > .item-center > .item-center-icon {
-      border-color: blue;
+      border-color: $color;
     }
   }
   &.item--done {
+    $color: #2ecc71;
+    $color-dark: #27ae60;
+
+    color: $color-dark;
     &::before {
-      background-color: green;
+      background-color: $color;
     }
     > .item-center > .item-center-icon {
-      border-color: green;
+      border-color: $color;
     }
   }
 
@@ -57,27 +70,27 @@
   }
   > .item-center {
     display: block;
-    width: 24px;
-    margin: 0 10px;
+    width: 24pt;
+    margin: 0 10pt;
     position: relative;
     display: flex;
     justify-content: center;
     
     > .item-center-icon {
       border-radius: 50%;
-      border-width: 2px;
+      border-width: 2pt;
       border-color: gray;
       border-style: solid;
-      height: 24px;
-      width: 24px;
+      height: 24pt;
+      width: 24pt;
       background-color: white;
       flex-shrink: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       &.item-center-icon-sm {
-        height: 12px;
-        width: 12px;
+        height: 12pt;
+        width: 12pt;
       }
       > .item-center-icon-content {
 

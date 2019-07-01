@@ -9,6 +9,9 @@ build
 dist
 .rpt2_cache
 
+# css build
+./src/component/css
+
 # misc
 .DS_Store
 .env
