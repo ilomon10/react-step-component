@@ -66,6 +66,7 @@ import { Item } from 'react-step-component'
 
 Props | Type | Default
 ------|------|------
+active | **boolean** | false
 children | **node** | 
 end | **boolean** | false
 state | enum: '**pending**' \| '**waiting**' \| '**done**' | null

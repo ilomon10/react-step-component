@@ -32,6 +32,7 @@ export default class App extends Component {
           </div>
         ),
       }, {
+        active: true,
         itemCenter: {
           size: 'sm'
         },
@@ -68,8 +69,8 @@ export default class App extends Component {
     ]
   }
   render() {
-    const items = this.state.data.map(({ itemRight, itemCenter, itemLeft }, i) => (
-      <Step.Item.Wrapper key={i} end={i >= this.state.data.length - 1}>
+    const items = this.state.data.map(({ active, itemRight, itemCenter, itemLeft }, i) => (
+      <Step.Item.Wrapper key={i} active={active} end={i >= this.state.data.length - 1}>
         <Step.Item.Left>
           {itemRight}
         </Step.Item.Left>

@@ -6,7 +6,7 @@ const Basic = () => (
   <div>
     <div>
       <Step.List>
-        <Step.Item.Wrapper state='waiting'>
+        <Step.Item.Wrapper state='waiting' active>
           <Step.Item.Left>
             This is content on the left side
           </Step.Item.Left>
