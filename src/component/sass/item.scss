@@ -1,7 +1,7 @@
 .item {
   position: relative;
   display: flex;
-  padding-bottom: 50pt;
+  padding-bottom: 24pt;
   color: #7f8c8d;
 
   & > [class*="item-"]:not(.item-center){
@@ -33,7 +33,7 @@
     &::before {
       background-color: $color;
     }
-    > .item-center > .item-center-icon {
+    > .item-center > .item-center-icon::after {
       border-color: $color;
     }
   }
@@ -41,11 +41,11 @@
     $color: #3498db;
     $color-dark: #2980b9;
 
-    color: #2980b9;
+    color: $color;
     &::before {
       background-color: $color;
     }
-    > .item-center > .item-center-icon {
+    > .item-center > .item-center-icon::after {
       border-color: $color;
     }
   }
@@ -57,7 +57,7 @@
     &::before {
       background-color: $color;
     }
-    > .item-center > .item-center-icon {
+    > .item-center > .item-center-icon::after {
       border-color: $color;
     }
   }
@@ -77,23 +77,47 @@
     justify-content: center;
     
     > .item-center-icon {
-      border-radius: 50%;
-      border-width: 2pt;
-      border-color: gray;
-      border-style: solid;
+      position: relative;
       height: 24pt;
       width: 24pt;
-      background-color: white;
       flex-shrink: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      &.item-center-icon-sm {
+      background-color: white;
+      &::before {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        width: 4pt;
+        top: -6pt;
+        bottom: -6pt;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+      }
+      &::after {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 22pt;
+        width: 22pt;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border-width: 2pt;
+        border-color: gray;
+        border-style: solid;
+      }
+
+      &.item-center-icon--sm {
         height: 12pt;
         width: 12pt;
       }
       > .item-center-icon-content {
-
+        z-index: 2;
+        position: relative;
       }
     }
   }

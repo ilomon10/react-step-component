@@ -1,6 +1,6 @@
 # react-step-component
 
-> React Step Component
+> This is simple step progress component for react
 
 [![NPM](https://img.shields.io/npm/v/react-step-component.svg)](https://www.npmjs.com/package/react-step-component) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -38,52 +38,7 @@ export default class App extends Component {
 }
 ```
 
-## Props API
-
-### List
-
-```jsx
-import { List } from 'react-step-component'
-```
-
-Props | Type | Default
-------|------|------
-children | **node** | 
-
-___
-
-### Item
-
-```jsx
-import { Item } from 'react-step-component'
-```
-
-### Item.Wrapper
-
-Props | Type | Default
-------|------|------
-children | **node** | 
-end | **boolean** | false
-state | enum: '**pending**' \| '**waiting**' \| '**done**'
-
-### Item.Left
-
-Props | Type | Default
-------|------|------
-children | **node** |
-
-### Item.Right
-
-Props | Type | Default
-------|------|------
-children | **node** |
-
-### Item.Center
-
-Props | Type | Default
-------|------|------
-content | **node** |
-size | enum: '**lg**' \| '**sm**' | 'lg'
+## [API Documentation](https://ilomon10.github.io/react-step-component/)
 
 ## License
 

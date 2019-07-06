@@ -5,7 +5,7 @@ import styles from './css/item.css';
 
 const ItemCenter = ({ size, content }) => (
   <div className={styles["item-center"]}>
-    <div className={`${styles["item-center-icon"]} ${size === 'sm' ? styles['item-center-icon-sm'] : ''}`}>
+    <div className={`${styles["item-center-icon"]} ${size === 'sm' ? styles['item-center-icon--sm'] : ''}`}>
       <div className={styles["item-center-icon-content"]}>
         {content}
       </div>

@@ -1,7 +1,7 @@
 .item {
   position: relative;
   display: flex;
-  padding-bottom: 50pt;
+  padding-bottom: 24pt;
   color: #7f8c8d; }
   .item > [class*="item-"]:not(.item-center) {
     width: 45%;
@@ -24,19 +24,19 @@
     color: #d35400; }
     .item.item--pending::before {
       background-color: #f39c12; }
-    .item.item--pending > .item-center > .item-center-icon {
+    .item.item--pending > .item-center > .item-center-icon::after {
       border-color: #f39c12; }
   .item.item--waiting {
-    color: #2980b9; }
+    color: #3498db; }
     .item.item--waiting::before {
       background-color: #3498db; }
-    .item.item--waiting > .item-center > .item-center-icon {
+    .item.item--waiting > .item-center > .item-center-icon::after {
       border-color: #3498db; }
   .item.item--done {
     color: #27ae60; }
     .item.item--done::before {
       background-color: #2ecc71; }
-    .item.item--done > .item-center > .item-center-icon {
+    .item.item--done > .item-center > .item-center-icon::after {
       border-color: #2ecc71; }
   .item > .item-left {
     text-align: right; }
@@ -50,20 +50,43 @@
     display: flex;
     justify-content: center; }
     .item > .item-center > .item-center-icon {
-      border-radius: 50%;
-      border-width: 2pt;
-      border-color: gray;
-      border-style: solid;
+      position: relative;
       height: 24pt;
       width: 24pt;
-      background-color: white;
       flex-shrink: 0;
       display: flex;
       justify-content: center;
-      align-items: center; }
-      .item > .item-center > .item-center-icon.item-center-icon-sm {
+      align-items: center;
+      background-color: white; }
+      .item > .item-center > .item-center-icon::before {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        width: 4pt;
+        top: -6pt;
+        bottom: -6pt;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white; }
+      .item > .item-center > .item-center-icon::after {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 22pt;
+        width: 22pt;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border-width: 2pt;
+        border-color: gray;
+        border-style: solid; }
+      .item > .item-center > .item-center-icon.item-center-icon--sm {
         height: 12pt;
         width: 12pt; }
+      .item > .item-center > .item-center-icon > .item-center-icon-content {
+        z-index: 2;
+        position: relative; }
   .item > .item-right > div {
     margin-right: auto; }
 

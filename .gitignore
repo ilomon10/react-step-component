@@ -10,7 +10,8 @@ dist
 .rpt2_cache
 
 # css build
-./src/component/css
+src/component/css
+.sass-cache
 
 # misc
 .DS_Store
